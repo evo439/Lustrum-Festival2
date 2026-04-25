@@ -226,6 +226,19 @@
         </section>
 
         <!-- 2C: TIMETABLE & ARTISTS SECTION -->
+        <script>
+            const Snappet_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here" ;
+            const GHETTOFAUST_SRC = "ArtistPictures/Ghettofaust.png";
+            const GIORGIO_SRC = "ArtistPictures/GIORGIO.jpg";
+            const Akribes_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here";
+            const TUXX_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here";
+            const LED_SEPPELIN_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here";
+            const DJ_MICROWAVE_SRC = "ArtistPictures/DjMicrowave2.png";
+            const DNBALLIE_SRC = "ArtistPictures/DnBallie.jpeg";
+            const DJ_BART_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here"
+
+        
+        </script>
         <section id="timetable" class="py-12 md:py-20 px-2 sm:px-4 bg-cream/95 backdrop-blur-sm border-y-4 border-burgundy shadow-2xl relative w-full overflow-hidden">
             <div class="max-w-6xl mx-auto">
                 
@@ -242,13 +255,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
-
                     <!-- Slider Container -->
                     <div id="artist-slider" class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-8 md:px-2 hide-scrollbar scroll-smooth">
                         
                         <!-- Artist Card 1 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('SNAPPET', 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', 'The Live Area', 'Join Snappet in The Live Area for an unforgettable experience! More details about their performance will be announced soon.')">
-                            <img src="https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here" alt="Snappet" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('SNAPPET', Snappet_SRC , 'The Live Area', 'Join Snappet in The Live Area for an unforgettable experience! More details about their performance will be announced soon.')">
+                            <img id="snappet-img" alt="Snappet" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <script>document.getElementById('snappet-img').src = Snappet_SRC ;</script>
                             <!-- Gradient overlay: clear at top, dark at bottom for text readability -->
                             <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <!-- Bottom aligned text -->
@@ -259,8 +272,9 @@
                         </div>
 
                         <!-- Artist Card 2 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('GHETTOFAUST', 'ArtistPictures/Ghettofaust2.jpg', 'Music Stage', 'Ghettofaust brings the heat to the Music Stage. Don\'t miss out on this incredible set!')">
-                            <img src="ArtistPictures/Ghettofaust2.jpg" alt="Ghettofaust" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('GHETTOFAUST', GHETTOFAUST_SRC, 'Music Stage', 'Ghettofaust brings the heat to the Music Stage. Don\'t miss out on this incredible set!')">
+                            <img id="Ghettofaust-img" alt="Ghettofaust" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <script>document.getElementById('Ghettofaust-img').src = GHETTOFAUST_SRC;</script>
                             <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
                                 <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">GHETTO<br>FAUST</h3>
@@ -269,8 +283,9 @@
                         </div>
 
                         <!-- Artist Card 3: GIORGIO (With uploaded image) -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('GIORGIO', 'ArtistPictures/GIORGIO.jpg', 'Music Stage', 'Giorgio is ready to light up the Music Stage with amazing vibes. Get ready to dance!')">
-                            <img src="ArtistPictures/GIORGIO.jpg" alt="Giorgio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('GIORGIO', GIORGIO_SRC, 'Music Stage', 'Giorgio is ready to light up the Music Stage with amazing vibes. Get ready to dance!')">
+                            <img id="GIORGIO-img" alt="Giorgio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <script>document.getElementById('GIORGIO-img').src = GIORGIO_SRC;</script>
                             <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
                                 <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">GIORGIO</h3>
@@ -308,22 +323,35 @@
                             </div>
                         </div>
 
-                        <!-- Artist Card 7 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('MICROWAVE', 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', 'The Shelter', 'DJ Microwave spinning the hottest tracks in The Shelter to keep you dancing all night.')">
-                            <img src="https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here" alt="DJ Microwave" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <!-- Artist Card 7: DJ Microwave -->
+                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('DJ MICROWAVE', DJ_MICROWAVE_SRC , 'The Shelter', 'DJ Microwave spinning the hottest tracks in The Shelter to keep you dancing all night.')">
+                            <img id="dj-microwave-img" alt="DJ Microwave" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <script>document.getElementById('dj-microwave-img').src = DJ_MICROWAVE_SRC;</script>
                             <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">MICROWAVE</h3>
+                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">DJ<br>MICROWAVE</h3>
                                 <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">The Shelter</p>
                             </div>
                         </div>
 
-                        <!-- Artist Card 8 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('DNBALLIE', 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', 'The Shelter', 'DnBallie bringing the heavy bass and breaks to The Shelter. Get ready to go wild!')">
-                            <img src="https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here" alt="DnBallie" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <!-- Artist Card 8: DnBallie-->
+                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('DNBALLIE', DNBALLIE_SRC, 'The Shelter', 'DnBallie bringing the heavy bass and breaks to The Shelter. Get ready to go wild!')">
+                            <img id="DnBallie-img" alt="DnBallie" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <script>document.getElementById('DnBallie-img').src = DNBALLIE_SRC;</script>
                             <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
                                 <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">DNBALLIE</h3>
+                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">The Shelter</p>
+                            </div>
+                        </div>
+
+                                                <!-- Artist Card 8: DnBallie-->
+                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('DJ BART', DJ_BART_SRC, 'The Shelter', 'DnBallie bringing the heavy bass and breaks to The Shelter. Get ready to go wild!')">
+                            <img id="Dj-bart-img" alt="DnBallie" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <script>document.getElementById('Dj-bart-img').src = DJ_BART_SRC;</script>
+                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
+                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">DJ BART</h3>
                                 <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">The Shelter</p>
                             </div>
                         </div>
