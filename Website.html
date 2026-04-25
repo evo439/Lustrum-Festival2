@@ -227,17 +227,19 @@
 
         <!-- 2C: TIMETABLE & ARTISTS SECTION -->
         <script>
-            const Snappet_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here" ;
-            const GHETTOFAUST_SRC = "ArtistPictures/Ghettofaust.png";
-            const GIORGIO_SRC = "ArtistPictures/GIORGIO.jpg";
-            const Akribes_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here";
-            const TUXX_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here";
-            const LED_SEPPELIN_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here";
-            const DJ_MICROWAVE_SRC = "ArtistPictures/DjMicrowave2.png";
-            const DNBALLIE_SRC = "ArtistPictures/DnBallie.jpeg";
-            const DJ_BART_SRC = "https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here"
-
-        
+            // Edit your artists here, and it will automatically update the slider, modal, and timetable!
+            const ARTISTS = [
+                { id: 'snappet', name: 'SNAPPET', htmlName: 'SNAPPET', timetableName: '🌟 SNAPPET 🌟', src: 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', stage: 'The Live Area', bio: "Join Snappet in The Live Area for an unforgettable experience! More details about their performance will be announced soon." },
+                { id: 'ghettofaust', name: 'GHETTOFAUST', htmlName: 'GHETTO<br>FAUST', timetableName: '🌟 GHETTOFAUST 🌟', src: 'ArtistPictures/Ghettofaust.png', stage: 'Music Stage', bio: "Ghettofaust brings the heat to the Music Stage. Don't miss out on this incredible set!" },
+                { id: 'giorgio', name: 'GIORGIO', htmlName: 'GIORGIO', timetableName: 'GIORGIO', src: 'ArtistPictures/GIORGIO.jpg', stage: 'Music Stage', bio: "Giorgio is ready to light up the Music Stage with amazing vibes. Get ready to dance!" },
+                { id: 'akribes', name: 'Akribes', htmlName: 'Akribes', timetableName: 'AKRIBES', src: 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', stage: 'Music Stage', bio: "Catch Akribes performing live on the Music Stage. Their unique style will leave you wanting more." },
+                { id: 'tuxx', name: 'TUXX', htmlName: 'TUXX', timetableName: 'TUXX', src: 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', stage: 'Music Stage', bio: "TUXX brings their unique sound to the Music Stage for a performance you won't forget." },
+                { id: 'ledseppelin', name: 'LED SEPPELIN', htmlName: 'LED<br>SEPPELIN', timetableName: 'LED SEPPELIN', src: 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', stage: 'Music Stage', bio: "Rock out with Led Seppelin on the Music Stage! Prepare for legendary riffs and soaring vocals." },
+                { id: 'microwave', name: 'DJ MICROWAVE', htmlName: 'DJ<br>MICROWAVE', timetableName: 'DJ Microwave', src: 'ArtistPictures/DjMicrowave2.png', stage: 'The Shelter', bio: "DJ Microwave spinning the hottest tracks in The Shelter to keep you dancing all night." },
+                { id: 'dnballie', name: 'DNBALLIE', htmlName: 'DNBALLIE', timetableName: 'DnBALLIE', src: 'ArtistPictures/DnBallie.jpeg', stage: 'The Shelter', bio: "DnBallie bringing the heavy bass and breaks to The Shelter. Get ready to go wild!" },
+                { id: 'djbart', name: 'DJ BART', htmlName: 'DJ BART', timetableName: 'DJ BART', src: 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', stage: 'The Shelter', bio: "DJ Bart bringing the heavy bass and breaks to The Shelter. Get ready to go wild!" },
+                { id: 'Secretary', name: 'SECRETARY', htmlName: 'SECRETARY', timetableName: 'SECRETARY', src: 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Surprise!', stage: 'The Live Stage', bio: "Band" }
+            ]
         </script>
         <section id="timetable" class="py-12 md:py-20 px-2 sm:px-4 bg-cream/95 backdrop-blur-sm border-y-4 border-burgundy shadow-2xl relative w-full overflow-hidden">
             <div class="max-w-6xl mx-auto">
@@ -256,107 +258,21 @@
                         </svg>
                     </button>
                     <!-- Slider Container -->
-                    <div id="artist-slider" class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-8 md:px-2 hide-scrollbar scroll-smooth">
-                        
-                        <!-- Artist Card 1 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('SNAPPET', Snappet_SRC , 'The Live Area', 'Join Snappet in The Live Area for an unforgettable experience! More details about their performance will be announced soon.')">
-                            <img id="snappet-img" alt="Snappet" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <script>document.getElementById('snappet-img').src = Snappet_SRC ;</script>
-                            <!-- Gradient overlay: clear at top, dark at bottom for text readability -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <!-- Bottom aligned text -->
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">SNAPPET</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">The Live Area</p>
+                    <div id="artist-slider" class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-8 md:px-2 hide-scrollbar scroll-smooth"></div>
+                    <script>
+                        // Automatically generates the slider cards using the ARTISTS data above
+                        document.getElementById('artist-slider').innerHTML = ARTISTS.map(artist => `
+                            <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" 
+                                 onclick="openArtistModal('${artist.id}')">
+                                <img src="${artist.src}" alt="${artist.name}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
+                                    <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2 text-center">${artist.htmlName}</h3>
+                                    <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">${artist.stage}</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Artist Card 2 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('GHETTOFAUST', GHETTOFAUST_SRC, 'Music Stage', 'Ghettofaust brings the heat to the Music Stage. Don\'t miss out on this incredible set!')">
-                            <img id="Ghettofaust-img" alt="Ghettofaust" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <script>document.getElementById('Ghettofaust-img').src = GHETTOFAUST_SRC;</script>
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">GHETTO<br>FAUST</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">Music Stage</p>
-                            </div>
-                        </div>
-
-                        <!-- Artist Card 3: GIORGIO (With uploaded image) -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('GIORGIO', GIORGIO_SRC, 'Music Stage', 'Giorgio is ready to light up the Music Stage with amazing vibes. Get ready to dance!')">
-                            <img id="GIORGIO-img" alt="Giorgio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <script>document.getElementById('GIORGIO-img').src = GIORGIO_SRC;</script>
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">GIORGIO</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">Music Stage</p>
-                            </div>
-                        </div>
-
-                        <!-- Artist Card 4 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('Akribes', 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', 'Music Stage', 'Catch Akribes performing live on the Music Stage. Their unique style will leave you wanting more.')">
-                            <img src="https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here" alt="Akribes" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">Akribes</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">Music Stage</p>
-                            </div>
-                        </div>
-
-                        <!-- Artist Card 5 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('TUXX', 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', 'Music Stage', 'TUXX brings their unique sound to the Music Stage for a performance you won\'t forget.')">
-                            <img src="https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here" alt="TUXX" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">TUXX</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">Music Stage</p>
-                            </div>
-                        </div>
-
-                        <!-- Artist Card 6 -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('LED SEPPELIN', 'https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here', 'Music Stage', 'Rock out with Led Seppelin on the Music Stage! Prepare for legendary riffs and soaring vocals.')">
-                            <img src="https://via.placeholder.com/400x500/FAD7D4/8a151b?text=Photo+Here" alt="Led Seppelin" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2 text-center">LED<br>SEPPELIN</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">Music Stage</p>
-                            </div>
-                        </div>
-
-                        <!-- Artist Card 7: DJ Microwave -->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('DJ MICROWAVE', DJ_MICROWAVE_SRC , 'The Shelter', 'DJ Microwave spinning the hottest tracks in The Shelter to keep you dancing all night.')">
-                            <img id="dj-microwave-img" alt="DJ Microwave" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <script>document.getElementById('dj-microwave-img').src = DJ_MICROWAVE_SRC;</script>
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">DJ<br>MICROWAVE</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">The Shelter</p>
-                            </div>
-                        </div>
-
-                        <!-- Artist Card 8: DnBallie-->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('DNBALLIE', DNBALLIE_SRC, 'The Shelter', 'DnBallie bringing the heavy bass and breaks to The Shelter. Get ready to go wild!')">
-                            <img id="DnBallie-img" alt="DnBallie" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <script>document.getElementById('DnBallie-img').src = DNBALLIE_SRC;</script>
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">DNBALLIE</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">The Shelter</p>
-                            </div>
-                        </div>
-
-                                                <!-- Artist Card 8: DnBallie-->
-                        <div class="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 snap-center rounded-xl overflow-hidden group border-4 border-burgundy shadow-[4px_4px_0px_#8a151b] md:shadow-[6px_6px_0px_#8a151b] cursor-pointer bg-blush" onclick="openArtistModal('DJ BART', DJ_BART_SRC, 'The Shelter', 'DnBallie bringing the heavy bass and breaks to The Shelter. Get ready to go wild!')">
-                            <img id="Dj-bart-img" alt="DnBallie" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <script>document.getElementById('Dj-bart-img').src = DJ_BART_SRC;</script>
-                            <div class="absolute inset-0 bg-gradient-to-t from-burgundyDark/90 via-burgundyDark/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-5 pb-5 md:pb-6 text-center transform scale-95 group-hover:scale-100 transition-transform duration-300 z-10">
-                                <h3 class="font-display text-3xl md:text-4xl text-cream drop-shadow-md mb-1 md:mb-2">DJ BART</h3>
-                                <p class="text-blush text-xs md:text-sm font-bold tracking-widest uppercase drop-shadow-sm">The Shelter</p>
-                            </div>
-                        </div>
-
-                    </div>
+                        `).join('');
+                    </script>
 
                     <!-- Right Arrow Button -->
                     <button onclick="slideArtist('right')" class="absolute right-1 md:right-[-25px] top-1/2 transform -translate-y-1/2 z-20 bg-cream/90 md:bg-cream text-burgundy border-2 border-burgundy w-8 h-8 md:w-12 md:h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-burgundy hover:text-cream transition-colors group">
@@ -418,13 +334,13 @@
                                 </tr>
                                 <tr>
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">19:00</td>
-                                    <td class="p-2 md:p-4 font-bold text-center text-burgundy whitespace-nowrap bg-rose-300" rowspan="3">GIORGIO</td>
+                                    <td id="tt-giorgio" class="p-2 md:p-4 font-bold text-center text-burgundy whitespace-nowrap bg-rose-300" rowspan="3">GIORGIO</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-blue-200 whitespace-nowrap bg-blue-800" rowspan="6">Karaoke</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-800 whitespace-nowrap bg-purple-400">Workshops TBA</td>
                                 </tr>
                                 <tr class="bg-cream/50">
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">19:30</td>
-                                    <td class="p-2 md:p-4 font-bold text-center text-yellow-200 whitespace-nowrap bg-amber-600" rowspan="2">🌟 SNAPPET 🌟</td>
+                                    <td id="tt-snappet" class="p-2 md:p-4 font-bold text-center text-yellow-200 whitespace-nowrap bg-amber-600" rowspan="2">🌟 SNAPPET 🌟</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-400 whitespace-nowrap bg-purple-800">Workshops TBA</td>
                                 </tr>
                                 <tr>
@@ -434,7 +350,7 @@
                                 </tr>
                                 <tr class="bg-cream/50">
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">20:30</td>
-                                    <td class="p-2 md:p-4 font-bold text-center text-cream whitespace-nowrap bg-burgundy" rowspan="2">Akribes</td>
+                                    <td id="tt-akribes" class="p-2 md:p-4 font-bold text-center text-cream whitespace-nowrap bg-burgundy" rowspan="2">Akribes</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-amber-600 whitespace-nowrap bg-yellow-200" rowspan="2">Secretary</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-400 whitespace-nowrap bg-purple-800">Workshops TBA</td>
                                 </tr>
@@ -444,35 +360,35 @@
                                 </tr>
                                 <tr class="bg-cream/50">
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">21:30</td>
-                                    <td class="p-2 md:p-4 font-bold text-center text-burgundy whitespace-nowrap bg-rose-300" rowspan="2">🌟 GHETTOFAUST 🌟</td>
+                                    <td id="tt-ghettofaust" class="p-2 md:p-4 font-bold text-center text-burgundy whitespace-nowrap bg-rose-300" rowspan="2">🌟 GHETTOFAUST 🌟</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-yellow-200 whitespace-nowrap bg-amber-600" rowspan="3">Drinking game tournament</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-400 whitespace-nowrap bg-purple-800">Workshops TBA</td>
                                 </tr>
                                 <tr>
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">22:00</td>
                                     <!-- Ghettofaust merged cell -->
-                                    <td class="p-2 md:p-4 font-bold text-center text-blue-800 whitespace-nowrap bg-blue-200" rowspan="2">DJ Microwave</td>
+                                    <td id="tt-microwave" class="p-2 md:p-4 font-bold text-center text-blue-800 whitespace-nowrap bg-blue-200" rowspan="2">DJ Microwave</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-800 whitespace-nowrap bg-purple-400">Workshops TBA</td>
                                 </tr>
                                 <tr class="bg-cream/50">
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">22:30</td>
-                                    <td class="p-2 md:p-4 font-bold text-center text-cream whitespace-nowrap bg-burgundy" rowspan="2">TUXX</td>
+                                    <td id="tt-tuxx" class="p-2 md:p-4 font-bold text-center text-cream whitespace-nowrap bg-burgundy" rowspan="2">TUXX</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-400 whitespace-nowrap bg-purple-800">Workshops TBA</td>
                                 </tr>
                                 <tr>
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">23:00</td>
-                                    <td class="p-2 md:p-4 font-bold text-center text-blue-200 whitespace-nowrap bg-blue-800" rowspan="2">DnBallie</td>
+                                    <td id="tt-dnballie" class="p-2 md:p-4 font-bold text-center text-blue-200 whitespace-nowrap bg-blue-800" rowspan="2">DnBallie</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-amber-600 whitespace-nowrap bg-yellow-200" rowspan="2">Just dance</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-800 whitespace-nowrap bg-purple-400">Workshops TBA</td>
                                 </tr>
                                 <tr class="bg-cream/50">
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">23:30</td>
-                                    <td class="p-2 md:p-4 font-bold text-center text-burgundy whitespace-nowrap bg-rose-300" rowspan="3">Led Seppelin</td>
+                                    <td id="tt-ledseppelin" class="p-2 md:p-4 font-bold text-center text-burgundy whitespace-nowrap bg-rose-300" rowspan="3">Led Seppelin</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-400 whitespace-nowrap bg-purple-800">Workshops TBA</td>
                                 </tr>
                                 <tr>
                                     <td class="p-2 md:p-4 text-center font-bold bg-cream sticky left-0 z-10 shadow-[2px_0_4px_rgba(0,0,0,0.05)] border-r border-burgundy/20">00:00</td>
-                                    <td class="p-2 md:p-4 font-bold text-center text-blue-800 whitespace-nowrap bg-blue-200" rowspan="2">Bart</td>
+                                    <td id="tt-djbart" class="p-2 md:p-4 font-bold text-center text-blue-800 whitespace-nowrap bg-blue-200" rowspan="2">Bart</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-yellow-200 whitespace-nowrap bg-amber-600" rowspan="2">Borrel</td>
                                     <td class="p-2 md:p-4 font-bold text-center text-purple-800 whitespace-nowrap bg-purple-400">Workshops TBA</td>
                                 </tr>
@@ -484,6 +400,13 @@
                         </table>
                     </div>
                 </div>
+                <script>
+                    // Automatically map timetable names from the single ARTISTS variable!
+                    ARTISTS.forEach(artist => {
+                        const cell = document.getElementById('tt-' + artist.id);
+                        if (cell) cell.innerHTML = artist.timetableName;
+                    });
+                </script>
             </div>
         </section>
 
@@ -649,12 +572,15 @@
         }
 
         // Artist Modal functions
-        function openArtistModal(name, imgSrc, stage, bio) {
-            document.getElementById('modal-name').textContent = name;
-            document.getElementById('modal-img').src = imgSrc;
-            document.getElementById('modal-img').alt = name;
-            document.getElementById('modal-stage').textContent = stage;
-            document.getElementById('modal-bio').innerHTML = `<p>${bio}</p>`;
+        function openArtistModal(artistId) {
+            const artist = ARTISTS.find(a => a.id === artistId);
+            if (!artist) return;
+            
+            document.getElementById('modal-name').textContent = artist.name;
+            document.getElementById('modal-img').src = artist.src;
+            document.getElementById('modal-img').alt = artist.name;
+            document.getElementById('modal-stage').textContent = artist.stage;
+            document.getElementById('modal-bio').innerHTML = `<p>${artist.bio}</p>`;
             
             const modal = document.getElementById('artist-modal');
             modal.classList.remove('hidden');
